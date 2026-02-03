@@ -6,6 +6,3 @@ jobs:
     steps:
       - name: Output Github Context
         run: echo "${{ toJson(github) }}"
-
-      - name: Output Event Details on Issues
-        run: echo "${{ github.event.issue }}"
