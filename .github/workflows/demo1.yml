@@ -1,0 +1,26 @@
+name: Deploy Project
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Event Info
+        run: echo "${{ toJson(github.event) }}"
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Linter
+        run: npm run lint
+      - name: Run Tests
+        run: npm run test
+      - name: Build Project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deployed!"
