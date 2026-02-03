@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+body {
+    background-color: #ccc;
+}
+
+@theme {
+  --color-vite: #646cff;
+  --color-vite-hover: #535bf2;
+  --color-react: #61dafb;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
