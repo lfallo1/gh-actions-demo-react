@@ -48,8 +48,7 @@ jobs:
           path: dist/
       - name: Get name of generated javascript file
         id: get_js_file
-        run:
-          echo "script_file=$(ls dist/ | grep .js)" >> $GITHUB_OUTPUT
+        run: echo "script_file=$(ls dist/assets/*.js)" >> $GITHUB_OUTPUT
 
   deploy:
     needs: build
