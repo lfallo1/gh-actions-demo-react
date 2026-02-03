@@ -25,6 +25,9 @@ describe('App', () => {
     expect(screen.getByText('Section 2')).toBeInTheDocument()
     expect(screen.getByText('Section 3')).toBeInTheDocument()
 
+      //intentionally create failure case for testing
+    expect(screen.getByText('Section 4')).toBeInTheDocument()
+
     const subtexts = screen.getAllByText('Some subtext')
     expect(subtexts).toHaveLength(3)
   })
