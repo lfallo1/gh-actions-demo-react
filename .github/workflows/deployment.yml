@@ -32,6 +32,8 @@ jobs:
   build:
     needs: [lint,run_tests]
     runs-on: ubuntu-latest
+    outputs:
+      js_file: ${{ steps.get_js_file.outputs.script_file}}
     steps:
       - name: Get Code
         uses: actions/checkout@v4
@@ -44,9 +46,10 @@ jobs:
         with:
           name: my-website-artifact
           path: dist/
-#          path: |
-#            dist/
-#            package.json
+      - name: Get name of generated javascript file
+        id: get_js_file
+        run:
+          echo "script_file=$(ls dist/ | grep .js)" >> $GITHUB_OUTPUT
 
   deploy:
     needs: build
@@ -58,5 +61,8 @@ jobs:
           name: my-website-artifact
       - name: Output Files
         run: ls
+      - name: Print js and css file names
+        run:
+          echo "js_file_name=${{ needs.build.outputs.js_file }}"
       - name: Deploy
         run: echo "Deployed!"
