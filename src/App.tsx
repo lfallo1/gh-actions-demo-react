@@ -8,9 +8,9 @@ interface Section {
 function App() {
   const [count, setCount] = useState(0)
     const [section] = useState<Section[]>([
-        {"title":"Section 1", "subtext": "Some subtext"},
-        {"title":"Section 2", "subtext": "Some subtext"},
-        {"title":"Section 3", "subtext": "Some subtext"}
+        {"title":"Section 1", "subtext": "Some subtext 1"},
+        {"title":"Section 2", "subtext": "Some subtext 2"},
+        {"title":"Section 3", "subtext": "Some subtext 3"}
     ])
 
   return (
