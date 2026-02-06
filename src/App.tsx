@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center mt-32 text-center">
         <div className="flex flex-col p-15 text-4xl font-extrabold text-blue-200 bg-blue-950 rounded-md">
-            Welcome to the site
+            Welcome to the site: <h1 data-testid="site-name">{import.meta.env.VITE_SITE_NAME}</h1>
             <div className="mt-5">
                 <button className="rounded-md bg-green-700 p-5 text-sm" onClick={() => setCount(count + 1)}>
                     Increment Counter
@@ -36,6 +36,7 @@ function App() {
                 ))}
             </div>
         </div>
+        <footer data-testid="site-author">Author: {import.meta.env.VITE_SITE_AUTHOR}</footer>
     </div>
   )
 }

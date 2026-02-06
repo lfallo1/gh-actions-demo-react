@@ -25,6 +25,9 @@ jobs:
         run: npm run lint
 
   run_tests:
+#    env:
+#      VITE_SITE_NAME: Test Site #move to github secrets
+#      VITE_SITE_AUTHOR: Lance (Test Env) #move to github secrets
     runs-on: ubuntu-latest
     steps:
       - name: Get Code

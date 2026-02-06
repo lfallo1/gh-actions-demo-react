@@ -18,6 +18,16 @@ describe('App', () => {
     expect(screen.getByText('2')).toBeInTheDocument()
   })
 
+  it('displays a non-empty site name', () => {
+    render(<App />)
+    expect(screen.getByTestId('site-name').textContent).toBeTruthy()
+  })
+
+  it('displays a non-empty site author', () => {
+    render(<App />)
+    expect(screen.getByTestId('site-author').textContent).not.toBe('Author: ')
+  })
+
   it('displays all three sections with correct titles and subtext', () => {
     render(<App />)
 
