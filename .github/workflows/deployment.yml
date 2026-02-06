@@ -10,6 +10,7 @@ on:
 
 jobs:
   lint:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
